@@ -1,4 +1,4 @@
-# HSpice
+# HSpiceLab
 MATLAB toolbox to read HSPICE generated output files
 
 ## read_hspice_tr.m  
