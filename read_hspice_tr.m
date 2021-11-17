@@ -1,29 +1,25 @@
-%Read HSPICE generated ASCII formatted .tr0 files 
+%Read HSPICE generated ASCII formatted .tr# files 
 %% Author
 %Mohammad Abu Raihan Miah
 %University of California, San Diego
-%ver 2.0, 10/24/21
+%ver 3.0.0, 11/16/21
 %% Code description
-%This Code reads the HSPICE output file 'filename.tr0' and saves the
-%data in 'filename_results.mat format'.
-%data are save in two formats.
+%This Code reads the HSPICE output file 'filename.tr#' and shows the
+%data as a structure, 'simulaion_result'. 
 %simulation_result: data saved in structure format with the name of plotted
-%                   data
-%sim_result: simulation results are saved in column format
+%                   data as the 'field'.
 %
 %% Example for calling this function:
-% read_hspice_tr0('rcsim.tr0')
+% sim_data=read_hspice_tr('rcsim.tr0')
 % 
-% Data will be saved in 'rcsim_results.mat' file
-%
 %% main function
 %Don't touch here
-function read_hspice_tr0(filename_tr0)
+function simulation_result=read_hspice_tr(filename)
 
 % read data from the file
-filetr0 = fopen(filename_tr0);
-content_filetr0 = textscan(filetr0,'%s','HeaderLines',3);
-fclose(filetr0);
+filetr = fopen(filename);
+content_filetr0 = textscan(filetr,'%s','HeaderLines',3);
+fclose(filetr);
 
 % find number and name of the variables and start point of the data
 content_str=string(content_filetr0{1,1});clear content_filetr0
@@ -43,14 +39,9 @@ end
 
 % create a structure in double from the data
 data=replace(strjoin(content_str(data_start_ind:end)),' ','');
-data_separate=double(regexp(data,'.......E[+-]..','match'));clear data
+data_frmt=char(ones(1,find(char(content_str(data_start_ind))=='E',1)-1)*'.');
+data_separate=double(regexp(data,[data_frmt 'E[+-]..'],'match'));clear data
 for ii=1:num_var
     simulation_result(ii).val=data_separate(ii:num_var:length(data_separate)-1)';
 end
-
-% simulation results of currents/voltages in each column
-sim_result=[simulation_result(:).val];
-
-% save file
-save ([regexprep(filename_tr0,'.tr0','') '_results.mat'],'sim_result','simulation_result');
 end
