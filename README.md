@@ -1,6 +1,7 @@
 # HSpiceLab
 MATLAB toolbox to read HSPICE generated and ASCII formatted .tr#/.sw#/.ac# output files.  
-For a note, ASCII formatted file can be created using .OPTION post=2 in the .sp file. 
+> It is compatible with any POST_VERSION format.  
+> For a note, ASCII formatted file can be created using .OPTION post=2 in the .sp file.  
 
 ## read_hspice_tr_sw_ac.m  
 This function reads a ASCII formatted HSPICE output file (.option post=2) 'filename.tr#' or 'filename.sw#' or 'filename.ac#' and saves all the signals in the variable 'simulation_result' as a structure.  
