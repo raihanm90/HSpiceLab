@@ -14,9 +14,9 @@ c1 vo gnd 1uF
 .option POST_VERSION=9601
 .end
 ```
-Five signals, saved in the **tr_example.tr0** file after simulating **tr_example.sp**, were extracted into the sim_results variable.  
-For example, **sim_results(3).var_name=v(vo)** indicates that **sim_results(3).val** contains the computed voltages across the node vo at different sweep time, **sim_results(1).val**.  
-Later, time dependent output voltage along with the circuit current were also plotted (**tr_results.png**) to show the effect of the RC time constant.
+Five signals, saved in the `tr_example.tr0` file after simulating `tr_example.sp`, were extracted into the sim_results variable.  
+For example, `sim_results(3).var_name=v(vo)` indicates that `sim_results(3).val` contains the computed voltages across the node vo at different sweep time, `sim_results(1).val`.  
+Later, time dependent output voltage along with the circuit current were also plotted (`tr_results.png`) to show the effect of the RC time constant.
 
 # sw_example.m
 Example to read a .sw0 file and plot a signal.
@@ -33,9 +33,9 @@ d1 vd gnd tut_diode
 .option POST_VERSION=2001
 .end
 ```
-Five signals, saved in the **sw_example.sw0** file after simulating **sw_example.sp**, were extracted into the sim_results variable.  
-For example, **sim_results(3).var_name=v(vd)** indicates that **sim_results(3).val** contains the computed voltages across the diode at different sweep voltages.  
-Later, IV characteristics of the diode IV was also plotted (**sw_results.png**) from the results of the DC sweep analysis.
+Five signals, saved in the `sw_example.sw0` file after simulating `sw_example.sp`, were extracted into the sim_results variable.  
+For example, `sim_results(3).var_name=v(vd)` indicates that `sim_results(3).val` contains the computed voltages across the diode at different sweep voltages.  
+Later, IV characteristics of the diode IV was also plotted (`sw_results.png`) from the results of the DC sweep analysis.
 
 # ac_example.m
 Example to read a .ac0 file and plot a signal.
@@ -51,9 +51,9 @@ r1 vo gnd 1k
 .plot AC I(r1) VM(vo) VR(vo) VI(vo) VP(vo) VDB(vo) VT(vo) IT(r1) IM(r1) 
 .end
 ```
-Nineteen signals, saved in the **ac_example.ac0** file after simulating **ac_example.sp**, were extracted into the sim_results variable.  
-For example, **sim_results(4).var_name=v(vo)_real** and **sim_results(4).var_name=v(vo)_imag** indicate that **sim_results(4).val** and **sim_results(5).val** contain the 
-real and imaginary component of computed output voltage at different frquencies, **sim_results(1).val**. Similarly **sim_results(16).var_name=vdb(vo)** indicates the dB value
+Nineteen signals, saved in the `ac_example.ac0` file after simulating `ac_example.sp`, were extracted into the sim_results variable.  
+For example, `sim_results(4).var_name=v(vo)_real` and `sim_results(4).var_name=v(vo)_imag` indicate that `sim_results(4).val` and `sim_results(5).val` contain the 
+real and imaginary component of computed output voltage at different frquencies, `sim_results(1).val`. Similarly `sim_results(16).var_name=vdb(vo)` indicates the dB value
 of the vo magnitude. To compare this value with the computed real and imaginary signal components vdB_manual and vdB_direct were calculated and matched with each other.  
-Later, Bode plot of the output voltage was also plotted (**ac_results.png**) to show the effect of the High-Pass Filter.
+Later, Bode plot of the output voltage was also plotted (`ac_results.png`) to show the effect of the High-Pass Filter.
 
