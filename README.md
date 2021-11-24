@@ -16,6 +16,6 @@ Output: simulation_result = a structure (2 fields) that contains the contents fr
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node voltages and branch/element currents = .var_name_real and .var_name_imag for real and imaginary values of the signal.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MmN(xx)[Mm=V/Im,N=M,R,I,P,DB,T,xx=node/element] = signal names are saved as it is.
 ## Examples:
-An example for each output file type is shown in the 'Examples' folder to demonstrate the usage of function.
+An example for each output file type is shown in the 'Examples' folder to demonstrate the usage of function. Explanation and usage of each file is documented in the <a href=https://github.com/raihanm90/HSpiceLab/blob/main/Examples/readme.md>Details</a>.
 
 [![View read_hspice_tr0 on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/101043-read_hspice_tr0)
