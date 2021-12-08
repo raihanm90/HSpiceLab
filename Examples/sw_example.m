@@ -3,10 +3,10 @@ clc;clf;close all;clear all;
 %adding functions to the MATLAB search path
 addpath(fullfile(pwd,'..'));
 
-%reading tr_example.tr0 file generated from tr_example.sp file
+%reading sw_example.sw0 file generated from sw_example.sp file
 sim_result=read_hspice_tr_sw_ac('sw_example.sw0');
 
-%name of the signals present in the .tr# file
+%name of the signals present in the .sw# file
 all_signal_name={sim_result(:).var_name};
 
 %plot of diode IV, abs(i(vs)) vs. v(vd)
