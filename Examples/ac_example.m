@@ -3,10 +3,10 @@ clc;clf;close all;clear all;
 %adding functions to the MATLAB search path
 addpath(fullfile(pwd,'..'));
 
-%reading tr_example.tr0 file generated from tr_example.sp file
+%reading ac_example.ac0 file generated from ac_example.sp file
 sim_result=read_hspice_tr_sw_ac('ac_example.ac0');
 
-%name of the signals present in the .tr# file
+%name of the signals present in the .ac# file
 all_signal_name={sim_result(:).var_name};
 
 %Bode plot of the output vo of the high pass filter
